@@ -5,13 +5,21 @@ public class DistributionCenter {
     private Long id;
     private String name;
     private String postalCode;
-    private int number;
+    private String number;
 
-    public int getNumber() {
+    public DistributionCenter() {}
+
+    public DistributionCenter(String name, String postalCode, String number) {
+        this.name = name;
+        this.postalCode = postalCode;
+        this.number = number;
+    }
+
+    public String getNumber() {
         return number;
     }
 
-    public void setNumber(int number) {
+    public void setNumber(String number) {
         this.number = number;
     }
 
@@ -43,7 +51,6 @@ public class DistributionCenter {
     public String toString() {
         return "DistributionCenter [id=" + id + ", name=" + name + ", postalCode="
                 + postalCode + ", number=" + number + "]";
-
     }
 
 }

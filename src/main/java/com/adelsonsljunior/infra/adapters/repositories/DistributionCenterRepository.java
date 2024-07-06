@@ -23,7 +23,7 @@ public class DistributionCenterRepository implements IDistributionCenterReposito
 
             pst.setString(1, distributionCenter.getName());
             pst.setString(2, distributionCenter.getPostalCode());
-            pst.setInt(3, distributionCenter.getNumber());
+            pst.setString(3, distributionCenter.getNumber());
             pst.execute();
 
             conn.close();
@@ -50,7 +50,7 @@ public class DistributionCenterRepository implements IDistributionCenterReposito
                 distributionCenter.setName(rs.getString("id"));
                 distributionCenter.setName(rs.getString("name"));
                 distributionCenter.setPostalCode(rs.getString("postal_code"));
-                distributionCenter.setNumber(rs.getInt("number"));
+                distributionCenter.setNumber(rs.getString("number"));
                 distributionCenters.add(distributionCenter);
             }
             conn.close();
