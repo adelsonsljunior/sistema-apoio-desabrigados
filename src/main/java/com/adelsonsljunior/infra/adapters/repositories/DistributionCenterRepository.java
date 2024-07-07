@@ -47,7 +47,7 @@ public class DistributionCenterRepository implements IDistributionCenterReposito
             ResultSet rs = pst.executeQuery();
             while (rs.next()) {
                 DistributionCenter distributionCenter = new DistributionCenter();
-                distributionCenter.setName(rs.getString("id"));
+                distributionCenter.setId(rs.getLong("id"));
                 distributionCenter.setName(rs.getString("name"));
                 distributionCenter.setPostalCode(rs.getString("postal_code"));
                 distributionCenter.setNumber(rs.getString("number"));
