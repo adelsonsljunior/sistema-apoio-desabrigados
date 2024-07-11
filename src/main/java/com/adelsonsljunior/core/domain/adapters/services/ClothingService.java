@@ -16,7 +16,7 @@ public class ClothingService implements IClothingService {
 
     @Override
     public void create(Clothing clothing, int centerId) {
-        int totalClothes = 10000;
+        int totalClothes = clothingRepository.countByCenterId(centerId);
 
         if (totalClothes + 1 > 1000) {
             throw new IllegalArgumentException("--- O limite do estoque de roupas foi excedido, não é possível adicionar mais roupas! ---");

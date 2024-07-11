@@ -13,10 +13,10 @@ public class ClothingController {
         this.clothingService = clothingService;
     }
 
-    public void create(Clothing clothing, int clothingId) {
+    public void create(Clothing clothing, int centerId) {
 
         try {
-            clothingService.create(clothing, clothingId);
+            clothingService.create(clothing, centerId);
             System.out.println("\n*** ROUPA DOADA COM SUCESSO ***\n");
         } catch (IllegalArgumentException e) {
             System.out.println(e.getMessage());
