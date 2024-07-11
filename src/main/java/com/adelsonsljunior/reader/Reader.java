@@ -1,6 +1,6 @@
 package com.adelsonsljunior.reader;
 
-import com.adelsonsljunior.core.domain.DistributionCenter;
+import com.adelsonsljunior.core.domain.entities.DistributionCenter;
 import org.apache.commons.csv.CSVFormat;
 import org.apache.commons.csv.CSVParser;
 import org.apache.commons.csv.CSVRecord;

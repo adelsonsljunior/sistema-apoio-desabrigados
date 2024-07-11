@@ -1,6 +1,6 @@
 package com.adelsonsljunior.database;
 
-import com.adelsonsljunior.core.domain.DistributionCenter;
+import com.adelsonsljunior.core.domain.entities.DistributionCenter;
 import com.adelsonsljunior.core.domain.ports.repositories.IDistributionCenterRepository;
 import com.adelsonsljunior.reader.Reader;
 

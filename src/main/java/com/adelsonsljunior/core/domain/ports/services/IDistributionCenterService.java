@@ -1,6 +1,6 @@
 package com.adelsonsljunior.core.domain.ports.services;
 
-import com.adelsonsljunior.core.domain.DistributionCenter;
+import com.adelsonsljunior.core.domain.entities.DistributionCenter;
 
 import java.util.List;
 

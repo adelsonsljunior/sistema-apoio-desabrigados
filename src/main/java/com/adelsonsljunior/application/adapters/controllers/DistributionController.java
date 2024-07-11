@@ -1,6 +1,6 @@
 package com.adelsonsljunior.application.adapters.controllers;
 
-import com.adelsonsljunior.core.domain.DistributionCenter;
+import com.adelsonsljunior.core.domain.entities.DistributionCenter;
 import com.adelsonsljunior.core.domain.ports.services.IDistributionCenterService;
 
 import java.util.List;

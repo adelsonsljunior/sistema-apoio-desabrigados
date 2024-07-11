@@ -1,4 +1,4 @@
-package com.adelsonsljunior.core.domain;
+package com.adelsonsljunior.core.domain.entities;
 
 public class DistributionCenter {
 

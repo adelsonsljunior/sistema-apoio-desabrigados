@@ -1,6 +1,6 @@
 package com.adelsonsljunior.infra.adapters.repositories;
 
-import com.adelsonsljunior.core.domain.DistributionCenter;
+import com.adelsonsljunior.core.domain.entities.DistributionCenter;
 import com.adelsonsljunior.core.domain.ports.repositories.IDistributionCenterRepository;
 import com.adelsonsljunior.database.Postgres;
 
