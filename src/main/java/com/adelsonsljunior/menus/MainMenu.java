@@ -19,14 +19,8 @@ public class MainMenu {
 
         int option;
 
-        String[] headers = {"Opção", "Ação"};
-        String[][] options = {
-                {"1", "Abrir Menu de doaçoẽs"},
-                {"2", "Sair"}
-        };
-
         do {
-            System.out.println(AsciiTable.getTable(headers, options));
+            Dispalyer.displayMainMenu();
             System.out.print("Digite a opção de que deseja realizar: ");
 
             option = sc.nextInt();

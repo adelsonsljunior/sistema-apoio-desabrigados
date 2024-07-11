@@ -16,6 +16,9 @@ public class DonateMenu {
     DistribuitionCenterService distribuitionCenterService = new DistribuitionCenterService(distributionCenterRepository);
     DistributionController distributionController = new DistributionController(distribuitionCenterService);
 
+
+    ClothingMenu clothingMenu = new ClothingMenu();
+
     public DonateMenu() {
 
     }
@@ -23,24 +26,16 @@ public class DonateMenu {
     public void open() {
         int option;
 
-        String[] headers = {"Opção", "Ação"};
-        String[][] options = {
-                {"1", "Doação para um Centro de Distribuição"},
-                {"2", "Listar doações de um Centro de Distribuição"},
-                {"3", "Editar doação de um Centro de Distribuição"},
-                {"4", "Excluir doação de um Centro de Distribuição"},
-                {"5", "Voltar para o Menu Principal"}
-        };
-
         do {
-            System.out.println(AsciiTable.getTable(headers, options));
+            Dispalyer.displayDonationMenu();
             System.out.print("Digite a opção de que deseja realizar: ");
 
             option = sc.nextInt();
 
             switch (option) {
                 case 1:
-
+                    System.out.println("\n*** INDO PARA O MENU DE ROUPAS ***\n");
+                    clothingMenu.open();
                     break;
                 case 2:
 
