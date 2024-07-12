@@ -18,6 +18,7 @@ public class DonateMenu {
 
 
     ClothingMenu clothingMenu = new ClothingMenu();
+    HygieneProductMenu hygieneProductMenu = new HygieneProductMenu();
 
     public DonateMenu() {
 
@@ -38,7 +39,8 @@ public class DonateMenu {
                     clothingMenu.open();
                     break;
                 case 2:
-
+                    System.out.println("\n*** INDO PARA O MENU DE PRODUTOS DE HIGIENE ***\n");
+                    hygieneProductMenu.open();
                     break;
                 case 3:
 

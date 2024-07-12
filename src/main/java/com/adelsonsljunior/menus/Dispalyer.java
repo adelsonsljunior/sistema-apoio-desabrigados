@@ -1,8 +1,10 @@
 package com.adelsonsljunior.menus;
 
 import com.adelsonsljunior.core.domain.entities.Clothing;
+import com.adelsonsljunior.core.domain.entities.HygieneProduct;
 import com.github.freva.asciitable.AsciiTable;
 
+import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Stream;
 
@@ -22,7 +24,7 @@ public class Dispalyer {
         String[] headers = {"Opção", "Ação"};
         String[][] options = {
                 {"1", "Gerenciar roupas"},
-                {"2", "Gerenciar produtos de higiêne"},
+                {"2", "Gerenciar produtos de higiene"},
                 {"3", "Gerenciar alimentos"},
                 {"4", ""},
                 {"5", "Voltar para o Menu Principal"}
@@ -36,8 +38,8 @@ public class Dispalyer {
         String[][] options = {
                 {"1", "Doar roupa para um Centro de Distribuição"},
                 {"2", "Listar roupas de um Centro de Distribuição"},
-                {"3", "Editar roupa para um Centro de Distribuição"},
-                {"4", "Apagar roupa para um Centro de Distribuição"},
+                {"3", "Editar roupa de um Centro de Distribuição"},
+                {"4", "Apagar roupa de um Centro de Distribuição"},
                 {"5", "Voltar para o Menu de Doações"}
         };
 
@@ -69,5 +71,35 @@ public class Dispalyer {
 
         System.out.println("\n" + AsciiTable.getTable(headers, options) + "\n");
     }
+
+    public static void displayHygieneProductMenu() {
+
+        String[] headers = {"Opção", "Ação"};
+
+        String[][] options = {
+                {"1", "Doar produto de higiene para um Centro de Distribuição"},
+                {"2", "Listar produtos de higiene de um Centro de Distribuição"},
+                {"3", "Editar produto de higiene de um Centro de Distribuição"},
+                {"4", "Apagar produto de higiene de um Centro de Distribuição"},
+                {"5", "Voltar para o Menu de Doações"}
+        };
+
+        System.out.println(AsciiTable.getTable(headers, options));
+    }
+
+    public static void displayHygieneProducts(List<HygieneProduct> hygieneProducts) {
+
+        String[] headers = {"Id", "Descrição", "Tipo"};
+
+        Stream<HygieneProduct> hygieneProductStream = hygieneProducts.stream();
+
+        String[][] options = hygieneProductStream
+                .map(product -> new String[]{product.getId().toString(), product.getDescription(), product.getType()})
+                .toArray(String[][]::new);
+
+        System.out.println("\n" + AsciiTable.getTable(headers, options) + "\n");
+
+    }
+
 
 }
