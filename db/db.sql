@@ -7,6 +7,13 @@ CREATE TABLE IF NOT EXISTS distribution_centers
     PRIMARY KEY (id)
 );
 
+INSERT INTO distribution_centers(name, number, postal_code)
+VALUES ('Centro de Distribuição Esperança', '2450', '92032420');
+INSERT INTO distribution_centers(name, number, postal_code)
+VALUES ('Centro de Distribuição Prosperidade', '1501', '90119900');
+INSERT INTO distribution_centers(name, number, postal_code)
+VALUES ('Centro de Distribuição Reconstrução', '312', '94920170');
+
 CREATE TABLE IF NOT EXISTS clothes
 (
     id          SERIAL      NOT NULL,
