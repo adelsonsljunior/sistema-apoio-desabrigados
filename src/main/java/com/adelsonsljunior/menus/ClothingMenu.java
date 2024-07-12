@@ -22,7 +22,7 @@ public class ClothingMenu {
         int option;
 
         do {
-            Dispalyer.displayClothingMenu();
+            Displayer.displayClothingMenu();
             System.out.print("Digite a opção de que deseja realizar: ");
 
             option = sc.nextInt();
@@ -57,7 +57,7 @@ public class ClothingMenu {
         Scanner sc = new Scanner(System.in);
         Scanner sc2 = new Scanner(System.in);
 
-        Dispalyer.displayCenters();
+        Displayer.displayCenters();
 
         System.out.print("Digite o id do Centro de Distribuição: ");
         int centerId = sc.nextInt();
@@ -97,14 +97,14 @@ public class ClothingMenu {
 
     private void listClothes() {
         Scanner sc = new Scanner(System.in);
-        Dispalyer.displayCenters();
+        Displayer.displayCenters();
 
         System.out.print("Digite o id do Centro de Distribuição: ");
         int centerId = sc.nextInt();
 
         List<Clothing> clothes = clothingRepository.findAllByCenterId(centerId);
 
-        Dispalyer.displayClothes(clothes);
+        Displayer.displayClothes(clothes);
 
     }
 
@@ -140,7 +140,12 @@ public class ClothingMenu {
             } catch (IllegalArgumentException e) {
                 System.out.println(e.getMessage());
             }
-        } while (!size.equalsIgnoreCase("Infantil") && !size.equalsIgnoreCase("PP") && !size.equalsIgnoreCase("P") && !size.equalsIgnoreCase("M") && !size.equalsIgnoreCase("G") && !size.equalsIgnoreCase("GG"));
+        } while (!size.equalsIgnoreCase("Infantil")
+                && !size.equalsIgnoreCase("PP")
+                && !size.equalsIgnoreCase("P")
+                && !size.equalsIgnoreCase("M")
+                && !size.equalsIgnoreCase("G")
+                && !size.equalsIgnoreCase("GG"));
 
         Clothing clothing = new Clothing(description, gender, size);
         clothingController.update(clothing, clothingId);

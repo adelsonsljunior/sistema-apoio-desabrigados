@@ -3,7 +3,6 @@ package com.adelsonsljunior.menus;
 import com.adelsonsljunior.application.adapters.controllers.DistributionController;
 import com.adelsonsljunior.core.domain.adapters.services.DistribuitionCenterService;
 import com.adelsonsljunior.infra.adapters.repositories.DistributionCenterRepository;
-import com.github.freva.asciitable.AsciiTable;
 
 import java.util.Scanner;
 
@@ -19,6 +18,7 @@ public class DonateMenu {
 
     ClothingMenu clothingMenu = new ClothingMenu();
     HygieneProductMenu hygieneProductMenu = new HygieneProductMenu();
+    FoodMenu foodMenu = new FoodMenu();
 
     public DonateMenu() {
 
@@ -28,7 +28,7 @@ public class DonateMenu {
         int option;
 
         do {
-            Dispalyer.displayDonationMenu();
+            Displayer.displayDonationMenu();
             System.out.print("Digite a opção de que deseja realizar: ");
 
             option = sc.nextInt();
@@ -43,7 +43,8 @@ public class DonateMenu {
                     hygieneProductMenu.open();
                     break;
                 case 3:
-
+                    System.out.println("\n*** INDO PARA O MENU DE ALIMENTOS ***\n");
+                    foodMenu.open();
                     break;
                 case 4:
 

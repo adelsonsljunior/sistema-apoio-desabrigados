@@ -5,12 +5,11 @@ import com.adelsonsljunior.core.domain.entities.Food;
 import com.adelsonsljunior.core.domain.entities.HygieneProduct;
 import com.github.freva.asciitable.AsciiTable;
 
-import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Stream;
 
 // Classe para fazer o output formatado em tabelas entre os menus
-public class Dispalyer {
+public class Displayer {
 
     public static void displayMainMenu() {
         String[] headers = {"Opção", "Ação"};
@@ -104,16 +103,27 @@ public class Dispalyer {
 
     public static void displayFoods(List<Food> foods) {
 
-        String[] headers = {"Id", "Descrição", "Unidade de Medida", "Validade"};
+        String[] headers = {"Id", "Descrição", "Quantidade","Unidade de Medida", "Validade"};
 
         Stream<Food> foodsStream = foods.stream();
         String[][] data = foodsStream
-                .map(food -> new String[]{food.getId().toString(), food.getDescription(), food.getUnitOfMeasurement(), food.getValidity().toString()})
+                .map(food -> new String[]{food.getId().toString(), food.getDescription(), String.valueOf(food.getQuantity()), food.getUnitOfMeasurement(), food.getValidity().toString()})
                 .toArray(String[][]::new);
 
         System.out.println("\n" + AsciiTable.getTable(headers, data) + "\n");
     }
 
+    public static void displayFoodMenu() {
+        String[] headers = {"Opção", "Ação"};
+        String[][] options = {
+                {"1", "Doar alimento para um Centro de Distribuição"},
+                {"2", "Listar alimentos de um Centro de Distribuição"},
+                {"3", "Editar alimento de um Centro de Distribuição"},
+                {"4", "Apagar alimento de um Centro de Distribuição"},
+                {"5", "Voltar para o Menu de Doações"}
+        };
 
+        System.out.println(AsciiTable.getTable(headers, options));
+    }
 
 }

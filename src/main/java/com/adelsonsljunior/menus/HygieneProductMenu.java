@@ -22,7 +22,7 @@ public class HygieneProductMenu {
         int option = 0;
 
         do {
-            Dispalyer.displayHygieneProductMenu();
+            Displayer.displayHygieneProductMenu();
             System.out.print("Digite a opção de que deseja realizar: ");
             option = sc.nextInt();
 
@@ -57,12 +57,13 @@ public class HygieneProductMenu {
         Scanner sc = new Scanner(System.in);
         Scanner sc2 = new Scanner(System.in);
 
-        Dispalyer.displayCenters();
+        Displayer.displayCenters();
 
         System.out.print("Digite o id do Centro de Distribuição: ");
         int centerId = sc.nextInt();
 
         String type;
+        // loop para permitir que somente inputs válidos sejam aceitos
         do {
             System.out.println("Digite o tipo (sabonete / escova de dentes / pasta de dentes / absorvente):");
             type = sc2.nextLine();
@@ -90,14 +91,14 @@ public class HygieneProductMenu {
     private void listHygieneProducts() {
         Scanner sc = new Scanner(System.in);
 
-        Dispalyer.displayCenters();
+        Displayer.displayCenters();
 
         System.out.print("Digite o id do Centro de Distribuição: ");
         int centerId = sc.nextInt();
 
         List<HygieneProduct> hygieneProducts = hygieneProductController.findAllByCenterId(centerId);
 
-        Dispalyer.displayHygieneProducts(hygieneProducts);
+        Displayer.displayHygieneProducts(hygieneProducts);
 
     }
 

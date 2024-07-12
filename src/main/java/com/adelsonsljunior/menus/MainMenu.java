@@ -1,7 +1,5 @@
 package com.adelsonsljunior.menus;
 
-import com.github.freva.asciitable.AsciiTable;
-
 import java.util.Scanner;
 
 public class MainMenu {
@@ -20,7 +18,7 @@ public class MainMenu {
         int option;
 
         do {
-            Dispalyer.displayMainMenu();
+            Displayer.displayMainMenu();
             System.out.print("Digite a opção de que deseja realizar: ");
 
             option = sc.nextInt();

@@ -1,11 +1,12 @@
 package com.adelsonsljunior.core.domain.enums;
 
 public enum FoodUnitOfMeasurement {
-    KG("Kg"),
-    ML("Ml");
+    G("KG"),
+    KG("G"),
+    ML("ML"),
+    L("L");
 
-
-    private String measure;
+    private final String measure;
 
     FoodUnitOfMeasurement(String measure) {
         this.measure = measure;
@@ -13,7 +14,7 @@ public enum FoodUnitOfMeasurement {
 
     public static FoodUnitOfMeasurement fromMeasure(String measure) {
         for (FoodUnitOfMeasurement value : FoodUnitOfMeasurement.values()) {
-            if (value.measure.equals(measure)) {
+            if (value.measure.equalsIgnoreCase(measure)) {
                 return value;
             }
         }
