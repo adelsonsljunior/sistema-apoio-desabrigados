@@ -43,3 +43,6 @@ bin/
 
 ### Environment variables ###
 .env
+
+### class for testing ###
+src/main/java/com/adelsonsljunior/Test.java

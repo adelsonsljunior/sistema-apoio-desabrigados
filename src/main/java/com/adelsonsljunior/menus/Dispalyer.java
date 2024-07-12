@@ -1,6 +1,7 @@
 package com.adelsonsljunior.menus;
 
 import com.adelsonsljunior.core.domain.entities.Clothing;
+import com.adelsonsljunior.core.domain.entities.Food;
 import com.adelsonsljunior.core.domain.entities.HygieneProduct;
 import com.github.freva.asciitable.AsciiTable;
 
@@ -65,11 +66,11 @@ public class Dispalyer {
         String[] headers = {"Id", "Descrição", "Gênero", "Tamanho"};
 
         // transformando a lista de roupas em uma matriz
-        String[][] options = clothesStream
+        String[][] data = clothesStream
                 .map(clothing -> new String[]{clothing.getId().toString(), clothing.getDescription(), clothing.getGender(), clothing.getSize()})
                 .toArray(String[][]::new);
 
-        System.out.println("\n" + AsciiTable.getTable(headers, options) + "\n");
+        System.out.println("\n" + AsciiTable.getTable(headers, data) + "\n");
     }
 
     public static void displayHygieneProductMenu() {
@@ -93,13 +94,26 @@ public class Dispalyer {
 
         Stream<HygieneProduct> hygieneProductStream = hygieneProducts.stream();
 
-        String[][] options = hygieneProductStream
+        String[][] data = hygieneProductStream
                 .map(product -> new String[]{product.getId().toString(), product.getDescription(), product.getType()})
                 .toArray(String[][]::new);
 
-        System.out.println("\n" + AsciiTable.getTable(headers, options) + "\n");
+        System.out.println("\n" + AsciiTable.getTable(headers, data) + "\n");
 
     }
+
+    public static void displayFoods(List<Food> foods) {
+
+        String[] headers = {"Id", "Descrição", "Unidade de Medida", "Validade"};
+
+        Stream<Food> foodsStream = foods.stream();
+        String[][] data = foodsStream
+                .map(food -> new String[]{food.getId().toString(), food.getDescription(), food.getUnitOfMeasurement(), food.getValidity().toString()})
+                .toArray(String[][]::new);
+
+        System.out.println("\n" + AsciiTable.getTable(headers, data) + "\n");
+    }
+
 
 
 }
