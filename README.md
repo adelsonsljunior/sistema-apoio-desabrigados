@@ -6,10 +6,6 @@
 
 > Crie uma cópia do arquivo `.env.example` com o nome de `.env`.
 
-~~~bash
-$ docker compose up -d
-~~~
-
 ### 2. Suba o  banco de dados
 
 ~~~bash
