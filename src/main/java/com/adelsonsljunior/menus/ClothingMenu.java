@@ -6,6 +6,7 @@ import com.adelsonsljunior.core.domain.entities.Clothing;
 import com.adelsonsljunior.core.domain.enums.ClothingGender;
 import com.adelsonsljunior.core.domain.enums.ClothingSize;
 import com.adelsonsljunior.infra.adapters.repositories.ClothingRepository;
+import com.adelsonsljunior.reader.Reader;
 
 
 import java.util.List;
@@ -41,6 +42,9 @@ public class ClothingMenu {
                     deleteClothing();
                     break;
                 case 5:
+                    createClothingFromCsv();
+                    break;
+                case 6:
                     System.out.println("\n*** VOLTANDO PARA O MENU DE DOAÇÕES ***\n");
                     break;
                 default:
@@ -48,7 +52,7 @@ public class ClothingMenu {
                     break;
             }
 
-        } while (option != 5);
+        } while (option != 6);
 
     }
 
@@ -161,6 +165,19 @@ public class ClothingMenu {
 
         clothingController.delete(centerId);
 
+    }
+
+    private void createClothingFromCsv() {
+
+        Scanner sc = new Scanner(System.in);
+
+        Displayer.displayCenters();
+        System.out.print("Digite o id do Centro de Distribuição: ");
+        int centerId = sc.nextInt();
+
+        var clothing = Reader.readClothing();
+
+        clothingController.create(clothing, centerId);
     }
 
 

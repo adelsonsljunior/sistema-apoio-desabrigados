@@ -5,6 +5,7 @@ import com.adelsonsljunior.core.domain.adapters.services.FoodService;
 import com.adelsonsljunior.core.domain.entities.Food;
 import com.adelsonsljunior.core.domain.enums.FoodUnitOfMeasurement;
 import com.adelsonsljunior.infra.adapters.repositories.FoodRepository;
+import com.adelsonsljunior.reader.Reader;
 
 import java.time.LocalDate;
 import java.util.List;
@@ -20,7 +21,7 @@ public class FoodMenu {
 
         Scanner sc = new Scanner(System.in);
 
-        int option = 0;
+        int option;
 
         do {
             Displayer.displayFoodMenu();
@@ -42,13 +43,16 @@ public class FoodMenu {
                     deleteFood();
                     break;
                 case 5:
+                    createFoodFromCsv();
+                    break;
+                case 6:
                     System.out.println("\n*** VOLTANDO PARA O MENU DE DOAÇÕES ***\n");
                     break;
                 default:
                     System.out.println("\n*** OPÇÃO INVÁLIDA ***\n");
                     break;
             }
-        } while (option != 5);
+        } while (option != 6);
 
     }
 
@@ -174,6 +178,19 @@ public class FoodMenu {
         Food food = new Food(description, quantity, measure, validity);
         foodController.update(food, foodId);
     }
+
+    public void createFoodFromCsv(){
+
+        Scanner sc = new Scanner(System.in);
+
+        Displayer.displayCenters();
+        System.out.print("Digite o id do Centro de Distribuição: ");
+        int centerId = sc.nextInt();
+
+        Food food = Reader.readFood();
+        foodController.create(food, centerId);
+    }
+
 
 
 }

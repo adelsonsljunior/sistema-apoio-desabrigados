@@ -4,16 +4,15 @@ import java.util.Scanner;
 
 public class MainMenu {
 
-    private Scanner sc = new Scanner(System.in);
-    private Scanner sc2 = new Scanner(System.in);
-
-    private DonateMenu donateMenu = new DonateMenu();
+    private final DonateMenu donateMenu = new DonateMenu();
 
     public MainMenu() {
 
     }
 
     public void open() {
+
+        Scanner sc = new Scanner(System.in);
 
         int option;
 
@@ -25,7 +24,7 @@ public class MainMenu {
 
             switch (option) {
                 case 1:
-                    System.out.println("\n*** INDO PARA O MENU DOAÇOẼS ***\n");
+                    System.out.println("\n*** INDO PARA O MENU DE DOAÇOẼS ***\n");
                     donateMenu.open();
                     break;
                 case 2:

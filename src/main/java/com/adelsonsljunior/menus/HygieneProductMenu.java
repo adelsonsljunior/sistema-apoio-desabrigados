@@ -5,6 +5,7 @@ import com.adelsonsljunior.core.domain.adapters.services.HygieneProductService;
 import com.adelsonsljunior.core.domain.entities.HygieneProduct;
 import com.adelsonsljunior.core.domain.enums.HygieneProductType;
 import com.adelsonsljunior.infra.adapters.repositories.HygieneProductRepository;
+import com.adelsonsljunior.reader.Reader;
 
 import java.util.List;
 import java.util.Scanner;
@@ -19,7 +20,7 @@ public class HygieneProductMenu {
 
         Scanner sc = new Scanner(System.in);
 
-        int option = 0;
+        int option;
 
         do {
             Displayer.displayHygieneProductMenu();
@@ -40,6 +41,9 @@ public class HygieneProductMenu {
                     deleteHygieneProduct();
                     break;
                 case 5:
+                    createHyGieneProducFromCsv();
+                    break;
+                case 6:
                     System.out.println("\n*** VOLTANDO PARA O MENU DE DOAÇÕES ***\n");
                     break;
                 default:
@@ -140,6 +144,17 @@ public class HygieneProductMenu {
         Long centerId = sc.nextLong();
 
         hygieneProductController.delete(centerId);
+    }
+
+    public void createHyGieneProducFromCsv() {
+        Scanner sc = new Scanner(System.in);
+
+        Displayer.displayCenters();
+        System.out.print("Digite o id do Centro de Distribuição: ");
+        int centerId = sc.nextInt();
+
+        HygieneProduct hygieneProduct = Reader.readHygieneProduct();
+        hygieneProductController.create(hygieneProduct, centerId);
     }
 
 

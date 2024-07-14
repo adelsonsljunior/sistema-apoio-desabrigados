@@ -2,7 +2,6 @@ package com.adelsonsljunior;
 
 import com.adelsonsljunior.database.Seed;
 import com.adelsonsljunior.infra.adapters.repositories.ClothingRepository;
-import com.adelsonsljunior.infra.adapters.repositories.DistributionCenterRepository;
 import com.adelsonsljunior.infra.adapters.repositories.FoodRepository;
 import com.adelsonsljunior.infra.adapters.repositories.HygieneProductRepository;
 import com.adelsonsljunior.menus.MainMenu;

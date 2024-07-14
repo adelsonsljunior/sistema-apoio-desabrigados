@@ -1,30 +1,19 @@
 package com.adelsonsljunior.menus;
 
-import com.adelsonsljunior.application.adapters.controllers.DistributionController;
-import com.adelsonsljunior.core.domain.adapters.services.DistribuitionCenterService;
-import com.adelsonsljunior.infra.adapters.repositories.DistributionCenterRepository;
-
 import java.util.Scanner;
 
 public class DonateMenu {
 
-    private Scanner sc = new Scanner(System.in);
-    private Scanner sc2 = new Scanner(System.in);
-
-    DistributionCenterRepository distributionCenterRepository = new DistributionCenterRepository();
-    DistribuitionCenterService distribuitionCenterService = new DistribuitionCenterService(distributionCenterRepository);
-    DistributionController distributionController = new DistributionController(distribuitionCenterService);
-
-
-    ClothingMenu clothingMenu = new ClothingMenu();
-    HygieneProductMenu hygieneProductMenu = new HygieneProductMenu();
-    FoodMenu foodMenu = new FoodMenu();
+    private final ClothingMenu clothingMenu = new ClothingMenu();
+    private final HygieneProductMenu hygieneProductMenu = new HygieneProductMenu();
+    private final FoodMenu foodMenu = new FoodMenu();
 
     public DonateMenu() {
 
     }
 
     public void open() {
+        Scanner sc = new Scanner(System.in);
         int option;
 
         do {
@@ -47,9 +36,6 @@ public class DonateMenu {
                     foodMenu.open();
                     break;
                 case 4:
-
-                    break;
-                case 5:
                     System.out.println("\n*** VOLTANDO PARA O MENU PRINCIPAL ***\n");
                     break;
                 default:
@@ -57,7 +43,7 @@ public class DonateMenu {
                     break;
             }
 
-        } while (option != 5);
+        } while (option != 4);
     }
 
 

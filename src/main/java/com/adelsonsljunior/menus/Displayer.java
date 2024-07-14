@@ -26,8 +26,7 @@ public class Displayer {
                 {"1", "Gerenciar roupas"},
                 {"2", "Gerenciar produtos de higiene"},
                 {"3", "Gerenciar alimentos"},
-                {"4", ""},
-                {"5", "Voltar para o Menu Principal"}
+                {"4", "Voltar para o Menu Principal"}
         };
 
         System.out.println(AsciiTable.getTable(headers, options));
@@ -40,7 +39,8 @@ public class Displayer {
                 {"2", "Listar roupas de um Centro de Distribuição"},
                 {"3", "Editar roupa de um Centro de Distribuição"},
                 {"4", "Apagar roupa de um Centro de Distribuição"},
-                {"5", "Voltar para o Menu de Doações"}
+                {"5", "Doar roupa por um arquivo .csv para um Centro de Distruição"},
+                {"6", "Voltar para o Menu de Doações"}
         };
 
         System.out.println(AsciiTable.getTable(headers, options));
@@ -81,7 +81,8 @@ public class Displayer {
                 {"2", "Listar produtos de higiene de um Centro de Distribuição"},
                 {"3", "Editar produto de higiene de um Centro de Distribuição"},
                 {"4", "Apagar produto de higiene de um Centro de Distribuição"},
-                {"5", "Voltar para o Menu de Doações"}
+                {"5", "Doar produto de higiene por um arquivo .csv para um Centro de Distruição"},
+                {"6", "Voltar para o Menu de Doações"}
         };
 
         System.out.println(AsciiTable.getTable(headers, options));
@@ -120,7 +121,8 @@ public class Displayer {
                 {"2", "Listar alimentos de um Centro de Distribuição"},
                 {"3", "Editar alimento de um Centro de Distribuição"},
                 {"4", "Apagar alimento de um Centro de Distribuição"},
-                {"5", "Voltar para o Menu de Doações"}
+                {"5", "Doar alimento por um arquivo .csv para um Centro de Distruiçã"},
+                {"6", "Voltar para o Menu de Doações"}
         };
 
         System.out.println(AsciiTable.getTable(headers, options));
