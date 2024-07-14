@@ -62,8 +62,6 @@ public class FoodMenu {
 
         System.out.print("Digite a descrição do alimento: ");
         String description = sc2.nextLine();
-        System.out.print("Digite a quantidade: ");
-        int quantity = sc.nextInt();
 
         String measure;
         // loop para permitir que somente inputs válidos sejam aceitos
@@ -79,6 +77,9 @@ public class FoodMenu {
                 && !measure.equalsIgnoreCase("g")
                 && !measure.equalsIgnoreCase("ml")
                 && !measure.equalsIgnoreCase("l"));
+
+        System.out.print("Digite a quantidade: ");
+        int quantity = sc.nextInt();
 
         int year, month, day;
         LocalDate validity = null;
