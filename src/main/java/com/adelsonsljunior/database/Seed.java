@@ -29,7 +29,7 @@ public class Seed {
     }
 
     private void seedCLothes() {
-        String path = "db/seed_clothes.csv";
+        String path = "csv/seed_clothes.csv";
 
         try {
             java.io.Reader reader = Files.newBufferedReader(Paths.get(path));
@@ -57,7 +57,7 @@ public class Seed {
 
     private void seedHygieneProducts() {
 
-        String path = "db/seed_hygiene_products.csv";
+        String path = "csv/seed_hygiene_products.csv";
 
         try {
             java.io.Reader reader = Files.newBufferedReader(Paths.get(path));
@@ -84,7 +84,7 @@ public class Seed {
 
     private void seedFoods() {
 
-        String path = "db/seed_foods.csv";
+        String path = "csv/seed_foods.csv";
 
         try {
             java.io.Reader reader = Files.newBufferedReader(Paths.get(path));
